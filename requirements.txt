@@ -1,1 +1,8 @@
+certifi==2021.10.8
+charset-normalizer==2.0.10
+idna==3.3
 python-dotenv==0.19.2
+pytube==11.0.2
+requests==2.27.1
+urllib3==1.26.8
+youtube-transcript-api==0.4.3
