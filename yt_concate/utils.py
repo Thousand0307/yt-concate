@@ -1,6 +1,6 @@
 import os
 
-from yt_concate.setting import DOWNLOADS_DIR, VIDEOS_DIR, CAPTIONS_DIR, VIDEO_LIST_FILENAME
+from yt_concate.setting import DOWNLOADS_DIR, VIDEOS_DIR, CAPTIONS_DIR, OUTPUT_DIR
 
 
 class Utils:
@@ -11,6 +11,7 @@ class Utils:
         os.makedirs(DOWNLOADS_DIR, exist_ok=True)
         os.makedirs(VIDEOS_DIR, exist_ok=True)
         os.makedirs(CAPTIONS_DIR, exist_ok=True)
+        os.makedirs(OUTPUT_DIR, exist_ok=True)
 
     def get_video_list_filepath(self, channel_id):
         return os.path.join(DOWNLOADS_DIR, channel_id + '.txt')
@@ -26,3 +27,7 @@ class Utils:
     def video_file_exist(self, yt):
         path = yt.video_filepath
         return os.path.exists(path) and os.path.getsize(path) > 0
+
+    def get_output_filepath(self, channel_id, search_word):
+        filename = f'{channel_id}_{search_word}.mp4'
+        return os.path.join(OUTPUT_DIR, filename)
